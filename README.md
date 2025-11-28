@@ -2,7 +2,7 @@ Repositório do projeto da Disciplina Aprendizagem de Máquina
 
 Programa de Pós Graduação do CIn - UFPE 
 
-Requisitos Python 3.8
+Requisitos Python 3.8 SO - Linux min Ubuntu 20.04
 
 pip install numpy pandas matplotlib seaborn openml scikit-learn scikit-posthocs joblib
 pip install pytorch-tabnet torch
