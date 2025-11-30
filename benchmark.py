@@ -62,7 +62,7 @@ class MLBenchmark:
     """Benchmark ML - Versão corrigida para Linux/VSCode"""
     
     def __init__(self, n_datasets: int = 30, test_size: float = 0.3, 
-                 random_state: int = 42, cv_folds: int = 5):
+                 random_state: int = 16, cv_folds: int = 5):
         self.n_datasets = n_datasets
         self.test_size = test_size
         self.random_state = random_state
@@ -290,7 +290,7 @@ class MLBenchmark:
         
         try:
             best_model, tune_time, _ = self._random_search(
-                xgb.XGBClassifier(use_label_encoder=False, eval_metric='logloss', random_state=self.random_state),
+                xgb.XGBClassifier(eval_metric='logloss', random_state=self.random_state),
                 param_dist, X_train, y_train, 12
             )
         except:
@@ -592,7 +592,7 @@ if __name__ == "__main__":
     print("="*80 + "\n")
     
     # Teste rápido: 1 dataset
-    benchmark = MLBenchmark(n_datasets=1, test_size=0.30, random_state=42)
+    benchmark = MLBenchmark(n_datasets=1, test_size=0.30, random_state=16)
     
     # Completo: 30 datasets
     # benchmark = MLBenchmark(n_datasets=30, test_size=0.30, random_state=42)
